@@ -58,8 +58,9 @@ M305 P107 S"Keenovo" X7 T100000 B4240 R4700 H0 L0 ; Secondary bed thermistor
 
 ;Heaters
 
-M570 S360                               ; Hot end may be a little slow to heat up so allow it 360 seconds
-M143 S320                               ; Maximum heater temperature
+M570 S360                                  ; Heater fault will be thrown if set temp is not reached within 360 seconds.
+M143 H0 S120                               ; Maximum H0 (Bed) heater temperature
+M143 H1 S320                               ; Maximum H1 (Extruder) heater temperature
 
 ; Fans
 M106 P0 H-1                             ; Disable thermostatic mode for fan 0
